@@ -1,0 +1,8 @@
+install.packages("Sleuth3")
+library("Sleuth3")
+head(ex0523)
+boxplot(Oxygen~Bone,data=ex0523)
+anova1 <- aov(Oxygen ~ Bone, data =ex0523)
+summary(anova1)
+plot(anova1$fitted.values,anova1$residuals,xlab="Fitted Values", ylab="Residuals")
+abline(h=0)
